@@ -17,14 +17,14 @@ def total_salary(path):
     
     except FileNotFoundError:
         print(f"Файл '{path}' не знайдено.")
-        return 0, 0
+        return None, None
     except ValueError:
         print("Помилка в даних файлу.")
-        return 0, 0
+        return None, None
     except Exception as e:
         print(f"Сталася помилка: {e}")
-        return 0, 0
+        return None, None
 
 total, average = total_salary("path/to/salary_file.txt")
-if total is not 0 and average is not 0:
+if total is not None and average is not None:
     print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
